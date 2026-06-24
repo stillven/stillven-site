@@ -30,12 +30,13 @@ The method is the project; the mechanisms aren't on display. Source, telemetry s
 // ARCHITECTURE LIFECYCLE
 
   Σ  PROTOTYPE LINEAGE ············· 220+ iterations   [ARCHIVED FOUNDATION]
-  Σ  NATIVE REBUILD ················ 110+ iterations   [UNDER VALIDATION]
+  Σ  NATIVE REBUILD ················ 140+ iterations   [UNDER VALIDATION]
 
   v0.1.x   Static execution prototyping ............. [DEPRECATED]
   v0.2.x   Telemetry decoupling & hook isolation .... [CLEARED]
   v0.3.x   MPRV architecture transition ............. [CLEARED]
   v0.4.x   Validation gauntlet ...................... [ACTIVE · LOCKED]
+  v0.4.x   Cross-hardware generalization ............ [EXPANDING]
 
   Research threads:   RQ-001 · RQ-002 · RQ-003        [under seal]
 ```

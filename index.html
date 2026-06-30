@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>stillven</title>
+  <meta name="description" content="A frame-pacing instrument that measures what it changes — and shows its work, every run. Sealed until the results earn more." />
+  <meta name="theme-color" content="#14151A" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://stillven.com" />
+  <meta property="og:title" content="stillven" />
+  <meta property="og:description" content="A frame-pacing instrument that measures what it changes — and shows its work, every run. Sealed until the results earn more." />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 5 L53 13 V31 C53 45 44 54 32 59 C20 54 11 45 11 31 V13 Z' fill='none' stroke='%238A92A6' stroke-width='2.5'/%3E%3Cpath d='M16 34 H27 l3 -9 l3.5 17 l3 -8 H48' fill='none' stroke='%235CC2AC' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #14151A;
+      --parchment: #E9E4D8;
+      --teal: #5CC2AC;
+      --muted: #8A92A6;
+      --faint: #5A6173;
+      --hairline: #23252E;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      background: var(--ink);
+      /* faint center-raise: surface tone lifts where the mark sits, no shadow */
+      background-image: radial-gradient(120% 90% at 50% 42%, #181A20 0%, #14151A 60%, #111217 100%);
+      color: var(--parchment);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 32px 24px 0;
+      overflow: hidden;
+    }
+    /* optically lift the column slightly above true center */
+    main { transform: translateY(-5vh); max-width: 600px; }
+
+    .mark { width: 54px; height: 54px; display: block; margin: 0 auto 26px; }
+    .mark .ekg {
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: draw 1900ms cubic-bezier(0.16, 0.84, 0.3, 1) 250ms forwards;
+    }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+
+    .wordmark {
+      font-size: clamp(44px, 9vw, 62px);
+      font-weight: 500;
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+    .wordmark .still { color: var(--parchment); }
+    .wordmark .ven { color: var(--teal); }
+
+    .headline {
+      margin-top: 30px;
+      font-size: clamp(19px, 3.2vw, 23px);
+      font-weight: 400;
+      color: var(--parchment);
+      letter-spacing: 0.2px;
+    }
+    .sub {
+      margin: 14px auto 0;
+      max-width: 30em;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .sealed { margin-top: 40px; }
+    .sealed .lock {
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 0.3px;
+    }
+    .sealed .sub-lock {
+      margin-top: 6px;
+      font-size: 12.5px;
+      color: var(--faint);
+      letter-spacing: 0.2px;
+    }
+
+    .watch {
+      display: inline-block;
+      margin-top: 30px;
+      font-size: 13.5px;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 160ms ease, border-color 160ms ease;
+    }
+    .watch:hover, .watch:focus-visible {
+      color: var(--parchment);
+      border-bottom-color: var(--hairline);
+      outline: none;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 22px;
+      left: 0; right: 0;
+      text-align: center;
+    }
+    footer .token {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--faint);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mark .ekg { animation: none; stroke-dashoffset: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <svg class="mark" viewBox="0 0 64 64" role="img" aria-label="stillven mark — a shield with a steady heartbeat trace">
+      <path d="M32 5 L53 13 V31 C53 45 44 54 32 59 C20 54 11 45 11 31 V13 Z"
+            fill="none" stroke="#8A92A6" stroke-width="2.5" stroke-linejoin="round" />
+      <path class="ekg" d="M16 34 H27 l3 -9 l3.5 17 l3 -8 H48"
+            fill="none" stroke="#5CC2AC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+    <h1 class="wordmark"><span class="still">still</span><span class="ven">ven</span></h1>
+
+    <p class="headline">Proof, or nothing.</p>
+    <p class="sub">A frame-pacing instrument that measures what it changes — and shows its work, every run.</p>
+
+    <div class="sealed">
+      <div class="lock">Sealed until the results earn more.</div>
+      <div class="sub-lock">The seal comes off when the evidence does.</div>
+    </div>
+
+    <a class="watch" href="https://github.com/stillven/stillven-site">Watch the repo to be here when the seal comes off</a>
+  </main>
+
+  <footer>
+    <span class="token">state: sealed</span>
+  </footer>
+</body>
+</html>

@@ -46,12 +46,19 @@
     main { transform: translateY(-5vh); max-width: 600px; }
 
     .mark { width: 54px; height: 54px; display: block; margin: 0 auto 26px; }
-    .mark .ekg {
-      stroke-dasharray: 200;
-      stroke-dashoffset: 200;
-      animation: draw 1900ms cubic-bezier(0.16, 0.84, 0.3, 1) 250ms forwards;
+    .mark .ekg-base { opacity: 0.25; }
+    .mark .ekg-pulse {
+      stroke-dasharray: 100;
+      animation: ekgbeat 2600ms ease-in-out infinite;
     }
-    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes ekgbeat {
+      0%   { stroke-dashoffset: 100; opacity: 1; }
+      38%  { stroke-dashoffset: 0;   opacity: 1; }
+      58%  { stroke-dashoffset: 0;   opacity: 1; }
+      78%  { stroke-dashoffset: 0;   opacity: 0; }
+      79%  { stroke-dashoffset: 100; opacity: 0; }
+      100% { stroke-dashoffset: 100; opacity: 0; }
+    }
 
     .wordmark {
       font-size: clamp(44px, 9vw, 62px);
@@ -91,19 +98,29 @@
     }
 
     .watch {
-      display: inline-block;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.4em;
       margin-top: 30px;
       font-size: 13.5px;
       color: var(--muted);
       text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: color 160ms ease, border-color 160ms ease;
+      border-bottom: 1px solid rgba(138, 146, 166, 0.4);
+      padding-bottom: 2px;
+      transition: color 320ms ease, border-color 320ms ease;
+    }
+    .watch::after {
+      content: "\2197";
+      font-size: 0.9em;
+      transition: transform 320ms cubic-bezier(0.25, 0.1, 0.25, 1);
     }
     .watch:hover, .watch:focus-visible {
       color: var(--parchment);
-      border-bottom-color: var(--hairline);
+      border-bottom-color: rgba(233, 228, 216, 0.6);
       outline: none;
     }
+    .watch:hover::after, .watch:focus-visible::after { transform: translateX(3px); }
+    .watch:focus-visible { outline: 1px solid rgba(233, 228, 216, 0.5); outline-offset: 4px; }
 
     footer {
       position: fixed;
@@ -119,7 +136,8 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .mark .ekg { animation: none; stroke-dashoffset: 0; }
+      .mark .ekg-pulse { display: none; }
+      .mark .ekg-base { opacity: 1; }
     }
   </style>
 </head>
@@ -128,7 +146,9 @@
     <svg class="mark" viewBox="0 0 64 64" role="img" aria-label="stillven mark — a shield with a steady heartbeat trace">
       <path d="M32 5 L53 13 V31 C53 45 44 54 32 59 C20 54 11 45 11 31 V13 Z"
             fill="none" stroke="#8A92A6" stroke-width="2.5" stroke-linejoin="round" />
-      <path class="ekg" d="M16 34 H27 l3 -9 l3.5 17 l3 -8 H48"
+      <path class="ekg-base" pathLength="100" d="M16 34 H27 l3 -9 l3.5 17 l3 -8 H48"
+            fill="none" stroke="#5CC2AC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path class="ekg-pulse" pathLength="100" d="M16 34 H27 l3 -9 l3.5 17 l3 -8 H48"
             fill="none" stroke="#5CC2AC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
 
@@ -142,7 +162,7 @@
       <div class="sub-lock">The seal comes off when the evidence does.</div>
     </div>
 
-    <a class="watch" href="https://github.com/stillven/stillven-site">Watch the repo to be here when the seal comes off</a>
+    <a class="watch" href="https://github.com/stillven/stillven-site" target="_blank" rel="noopener noreferrer">Watch the repo to be here when the seal comes off</a>
   </main>
 
   <footer>

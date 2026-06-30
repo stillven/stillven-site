@@ -1,13 +1,13 @@
-# AegisArmor
+# Stillven
 
 ![Status](https://img.shields.io/badge/Status-Research_Prototype-purple)
 ![Stage](https://img.shields.io/badge/Stage-Private_Validation-blue)
-![Framework](https://img.shields.io/badge/Framework-Aegis_MPRV-lightgrey)
+![Framework](https://img.shields.io/badge/Framework-Stillven_MPRV-lightgrey)
 ![Validation Matrix](https://img.shields.io/badge/Validation_Matrix-ONLINE-brightgreen)
 
 **A research project asking one narrow question: can a system govern its own execution well enough to make a measurable, repeatable difference — and actually prove it?**
 
-AegisArmor is in active validation. The implementation, datasets, and experimental modules live in private repositories while the architecture is tested against its own success criteria. This page is the only public surface, and it stays deliberately thin until the results earn more.
+Stillven is in active validation. The implementation, datasets, and experimental modules live in private repositories while the architecture is tested against its own success criteria. This page is the only public surface, and it stays deliberately thin until the results earn more.
 
 ---
 
@@ -19,7 +19,7 @@ Most "optimizers" answer this with static tweaks, blunt cleanups, and confident 
 ## The Principle
 > Execution should be governed by validation, not guesswork.
 
-AegisArmor doesn't "boost" or "clean." It treats every action as a hypothesis — predicted before it runs, measured after, and kept only when the outcome holds up under real use. The bar isn't whether an intervention *sounds* right; it's whether the evidence says it worked, repeatably.
+Stillven doesn't "boost" or "clean." It treats every action as a hypothesis — predicted before it runs, measured after, and kept only when the outcome holds up under real use. The bar isn't whether an intervention *sounds* right; it's whether the evidence says it worked, repeatably — and that it can be shown, per run, without overclaiming.
 
 ## What's Public, and What Isn't
 The method is the project; the mechanisms aren't on display. Source, telemetry schemas, and results stay private during validation — partly to protect the work, mostly because unvalidated claims aren't worth publishing. Public documentation expands only as internal milestones clear their gates.
@@ -30,13 +30,16 @@ The method is the project; the mechanisms aren't on display. Source, telemetry s
 // ARCHITECTURE LIFECYCLE
 
   Σ  PROTOTYPE LINEAGE ············· 220+ iterations   [ARCHIVED FOUNDATION]
-  Σ  NATIVE REBUILD ················ 140+ iterations   [UNDER VALIDATION]
+  Σ  NATIVE REBUILD ················ 200+ iterations   [UNDER VALIDATION]
 
   v0.1.x   Static execution prototyping ............. [DEPRECATED]
   v0.2.x   Telemetry decoupling & hook isolation .... [CLEARED]
   v0.3.x   MPRV architecture transition ............. [CLEARED]
-  v0.4.x   Validation gauntlet ...................... [ACTIVE · LOCKED]
+  v0.4.x   Validation gauntlet ...................... [CLEARED]
   v0.4.x   Cross-hardware generalization ............ [EXPANDING]
+  v0.5.x   Measurement-integrity overhaul ........... [CLEARED]
+  v0.5.x   Single-surface interface rebuild ......... [CLEARED]
+  v0.6.x   Adaptive trust boundary .................. [ACTIVE · SEALED]
 
   Research threads:   RQ-001 · RQ-002 · RQ-003        [under seal]
 ```

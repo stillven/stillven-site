@@ -1,4 +1,4 @@
-# Stillven
+# stillven
 
 ![Status](https://img.shields.io/badge/Status-Research_Prototype-purple)
 ![Stage](https://img.shields.io/badge/Stage-Private_Validation-blue)

@@ -134,15 +134,34 @@
       text-align: center;
     }
     footer .token {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6em;
       font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 11px;
       letter-spacing: 1px;
       color: var(--faint);
     }
+    /* live idle indicator — phase-locked to the mark's 2600ms heartbeat so the page breathes head to foot.
+       Floats between faint and soft (never neon): the instrument is awake, but waiting. */
+    footer .token .pip {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--teal);
+      animation: pip 2600ms ease-in-out infinite;
+    }
+    @keyframes pip {
+      0%, 30% { opacity: 0.22; }
+      38%     { opacity: 0.9; }
+      58%     { opacity: 0.9; }
+      75%     { opacity: 0.22; }
+      100%    { opacity: 0.22; }
+    }
 
     @media (prefers-reduced-motion: reduce) {
       .mark .ekg-pulse { display: none; }
       .mark .ekg-base { opacity: 1; }
+      footer .token .pip { animation: none; opacity: 0.5; }
     }
   </style>
 </head>
@@ -171,7 +190,17 @@
   </main>
 
   <footer>
-    <span class="token">state: sealed</span>
+    <span class="token"><span class="pip" aria-hidden="true"></span>state: sealed<span class="pip" aria-hidden="true"></span></span>
   </footer>
+
+  <script>
+    // For the ones who open the console — a builder's handshake. Restates only what the page already says.
+    console.log(
+      "%cstillven%c  state: sealed\n%cMeasures what it changes. Shows its work, every run.\nWatch the repo to be here when the seal comes off:\nhttps://github.com/stillven/stillven-site",
+      "color:#5CC2AC;font:600 15px 'IBM Plex Mono',monospace",
+      "color:#8A92A6;font:400 12px 'IBM Plex Mono',monospace",
+      "color:#5A6173;font:400 11px 'IBM Plex Mono',monospace"
+    );
+  </script>
 </body>
 </html>

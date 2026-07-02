@@ -2,8 +2,8 @@
 
 ![Status](https://img.shields.io/badge/Status-Research_Prototype-purple)
 ![Stage](https://img.shields.io/badge/Stage-Private_Validation-blue)
-![Framework](https://img.shields.io/badge/Framework-Stillven_MPRV-lightgrey)
-![Validation Matrix](https://img.shields.io/badge/Validation_Matrix-ONLINE-brightgreen)
+![Method](https://img.shields.io/badge/Method-Validation--Governed-lightgrey)
+![Instrumentation](https://img.shields.io/badge/Instrumentation-LIVE-blue)
 
 **A research project asking one narrow question: can a system govern its own execution well enough to make a measurable, repeatable difference — and actually prove it?**
 
@@ -33,12 +33,12 @@ The method is the project; the mechanisms aren't on display. Source, telemetry s
   Σ  NATIVE REBUILD ················ 200+ iterations   [UNDER VALIDATION]
 
   v0.1.x   Static execution prototyping ............. [DEPRECATED]
-  v0.2.x   Telemetry decoupling & hook isolation .... [CLEARED]
-  v0.3.x   MPRV architecture transition ............. [CLEARED]
-  v0.4.x   Validation gauntlet ...................... [CLEARED]
+  v0.2.x   Telemetry decoupling & sensor boundary ... [COMPLETE]
+  v0.3.x   Governance-loop architecture ............. [COMPLETE]
+  v0.4.x   Validation harness ....................... [BUILT]
   v0.4.x   Cross-hardware generalization ............ [EXPANDING]
-  v0.5.x   Measurement-integrity overhaul ........... [CLEARED]
-  v0.5.x   Single-surface interface rebuild ......... [CLEARED]
+  v0.5.x   Measurement-integrity overhaul ........... [COMPLETE]
+  v0.5.x   Single-surface interface rebuild ......... [COMPLETE]
   v0.6.x   Adaptive trust boundary .................. [ACTIVE · SEALED]
 
   Research threads:   RQ-001 · RQ-002 · RQ-003        [under seal]

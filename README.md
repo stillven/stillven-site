@@ -19,7 +19,7 @@ Most "optimizers" answer this with static tweaks, blunt cleanups, and confident 
 ## The Principle
 > Execution should be governed by validation, not guesswork.
 
-Stillven doesn't "boost" or "clean." It treats every action as a hypothesis — predicted before it runs, measured after, and kept only when the outcome holds up under real use. The bar isn't whether an intervention *sounds* right; it's whether the evidence says it worked, repeatably — and that it can be shown, per run, without overclaiming.
+Stillven doesn't "boost" or "clean." It treats every action as a hypothesis — predicted before it runs, measured after, and kept only when the outcome holds up under real use. The bar isn't whether an intervention *sounds* right; it's whether the evidence says it worked, repeatably — that it can be shown, per run, without overclaiming, and that it survives independent adversarial review before it's ever trusted to act on its own.
 
 ## What's Public, and What Isn't
 The method is the project; the mechanisms aren't on display. Source, telemetry schemas, and results stay private during validation — partly to protect the work, mostly because unvalidated claims aren't worth publishing. Public documentation expands only as internal milestones clear their gates.
@@ -40,6 +40,7 @@ The method is the project; the mechanisms aren't on display. Source, telemetry s
   v0.5.x   Measurement-integrity overhaul ........... [COMPLETE]
   v0.5.x   Single-surface interface rebuild ......... [COMPLETE]
   v0.6.x   Adaptive trust boundary .................. [ACTIVE · SEALED]
+  v0.6.x   Trust-boundary safety hardening .......... [ACTIVE · RED-TEAM]
 
   Research threads:   RQ-001 · RQ-002 · RQ-003        [under seal]
 ```

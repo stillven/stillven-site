@@ -49,7 +49,7 @@
       --parchment: #E9E4D8;
       --teal: #5CC2AC;
       --muted: #8A92A6;
-      --faint: #6B7285; /* SV-114 (tD): nudged from #5A6173 — 4.6:1 on ink, clears WCAG AA small-text; still clearly the faintest tier */
+      --faint: #828A9C; /* SV audit 2026-07-16: #6B7285 measured only ~3.8:1 on #14151A (the prior "4.6:1" comment was wrong) — FAILED WCAG AA small-text. #828A9C = ~5.3:1 on #14151A (and higher on the darker gradient stop #111217), clears AA, still the faintest tier below --muted (#8A92A6, ~5.9:1). */
       --hairline: #23252E;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }

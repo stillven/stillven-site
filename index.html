@@ -159,6 +159,15 @@
       100%    { opacity: 0.22; }
     }
 
+    /* Short viewports (landscape phones, half-height windows): the fixed footer collides with the watch
+       link and overflow:hidden clips the mark with no way to scroll. Below 600px of height the page
+       becomes a normal document flow — footer in-flow, scroll allowed. No change at full size. */
+    @media (max-height: 600px) {
+      body { overflow-y: auto; justify-content: flex-start; padding-top: 36px; }
+      main { transform: none; }
+      footer { position: static; margin: 36px 0 22px; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .mark .ekg-pulse { display: none; }
       .mark .ekg-base { opacity: 1; }
